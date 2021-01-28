@@ -2,7 +2,11 @@ package pl.pakinio.testyjednoskowe;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.Matchers.*;
 
 class MealTest {
 
@@ -16,6 +20,7 @@ class MealTest {
 
         //then
         assertEquals(28,discountPrice);
+        assertThat(discountPrice,equalTo(28));
     }
 
     @Test
@@ -26,6 +31,7 @@ class MealTest {
 
         //then
         assertSame(meal1,meal2);
+        assertThat(meal1,sameInstance(meal2));
     }
     @Test
     void referencesToDiffrentObjectShouldNotBeEquel(){
@@ -35,6 +41,7 @@ class MealTest {
 
         //then
         assertNotSame(meal1,meal2);
+        assertThat(meal1, not(sameInstance(meal2)));
     }
 
     @Test
@@ -45,5 +52,15 @@ class MealTest {
 
         //then
         assertEquals(meal1,meal2,"Checking if two meals are equel");
+    }
+
+    @Test
+    void exceptionShouldBeThrownIfDiscountIsHigherThanThePrice(){
+        //given
+        Meal meal=new Meal(8,"Soup");
+
+        //when
+        //then
+        assertThrows(IllegalArgumentException.class,()->meal.getDiscountedPrice(40));
     }
 }
