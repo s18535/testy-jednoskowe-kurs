@@ -21,4 +21,11 @@ public class Order {
     public List<Meal> getMeals() {
         return meals;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "meals=" + meals +
+                '}';
+    }
 }
