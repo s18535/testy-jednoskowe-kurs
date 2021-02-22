@@ -9,6 +9,15 @@ public class Account {
         this.active=false;
     }
 
+    public Account(Address defaultDeliveyAddress) {
+        this.defaultDeliveyAddress = defaultDeliveyAddress;
+        if (defaultDeliveyAddress != null){
+            activate();
+        }else {
+            this.active =false;
+        }
+    }
+
     public void activate(){
         this.active=true;
     }
