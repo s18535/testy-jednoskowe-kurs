@@ -3,6 +3,7 @@ package pl.pakinio.testyjednoskowe;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,17 +12,20 @@ import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(BeforeAfterExtension.class)
 class OrderTest {
 
     private Order order;
 
     @BeforeEach
     void initializerOrder(){
+        System.out.println("Before each");
         order=new Order();
     }
 
     @AfterEach
     void cleanUp(){
+        System.out.println("After each");
         order.cancle();
     }
 
