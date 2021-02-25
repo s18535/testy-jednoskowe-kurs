@@ -1,7 +1,9 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.account;
 
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import pl.pakinio.testyjednoskowe.account.Account;
+import pl.pakinio.testyjednoskowe.account.Address;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -75,6 +77,29 @@ class AccountTest {
         assumingThat(address != null,() ->{
             assertTrue(account.isActive());
         });
+    }
+    @Test
+    void invalidEmailShouldThrowException() {
+
+        //given
+        Account account = new Account();
+
+        //when
+        //then
+        assertThrows(IllegalArgumentException.class, () -> account.setEmail("wrongEmail"));
+
+    }
+
+    @Test
+    void validEmailShouldBeSet() {
+        //given
+        Account account = new Account();
+
+        //when
+        account.setEmail("kontakt@devfoundry.pl");
+
+        //then
+        assertThat(account.getEmail(), is("kontakt@devfoundry.pl"));
     }
 
 }

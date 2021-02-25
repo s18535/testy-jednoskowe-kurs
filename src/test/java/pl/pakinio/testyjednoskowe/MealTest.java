@@ -10,6 +10,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import pl.pakinio.testyjednoskowe.extensions.IAExceptionIgnoreExtension;
+import pl.pakinio.testyjednoskowe.order.Order;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -136,9 +138,9 @@ class MealTest {
     Collection<DynamicTest> calculateMealPrices(){
 
         Order order=new Order();
-        order.addMealOrder(new Meal(10,2,"Hamburger"));
-        order.addMealOrder(new Meal(7,4,"Fries"));
-        order.addMealOrder(new Meal(22,3,"Pizza"));
+        order.addMealToOrder(new Meal(10,2,"Hamburger"));
+        order.addMealToOrder(new Meal(7,4,"Fries"));
+        order.addMealToOrder(new Meal(22,3,"Pizza"));
 
         Collection<DynamicTest> dynamicTests=new ArrayList<>();
 

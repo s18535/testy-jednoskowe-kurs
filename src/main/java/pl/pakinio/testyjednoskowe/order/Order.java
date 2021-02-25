@@ -1,4 +1,6 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.order;
+
+import pl.pakinio.testyjednoskowe.Meal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +8,11 @@ import java.util.List;
 public class Order {
     private List<Meal> meals = new ArrayList<>();
 
-    void cancle(){
+    void cancle() {
         this.meals.clear();
     }
 
-    public void addMealOrder(Meal meal) {
+    public void addMealToOrder(Meal meal) {
         this.meals.add(meal);
     }
 
@@ -20,6 +22,17 @@ public class Order {
 
     public List<Meal> getMeals() {
         return meals;
+    }
+
+    int totalPrice() {
+
+        int sum = this.meals.stream().mapToInt(meal -> meal.getPrize()).sum();
+
+        if (sum<0){
+            throw new IllegalStateException("Price limit exceeded");
+        }else {
+            return sum;
+        }
     }
 
     @Override

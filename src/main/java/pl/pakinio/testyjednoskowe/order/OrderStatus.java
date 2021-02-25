@@ -1,4 +1,4 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.order;
 
 public enum OrderStatus {
 

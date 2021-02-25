@@ -1,10 +1,11 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.order;
 
 import org.junit.jupiter.api.*;
+import pl.pakinio.testyjednoskowe.Meal;
+import pl.pakinio.testyjednoskowe.order.Order;
+import pl.pakinio.testyjednoskowe.order.OrderBackup;
 
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderBackupTest {
     private static OrderBackup orderBackup;
@@ -30,8 +31,8 @@ class OrderBackupTest {
     void backupOrderWithOneMeal() throws IOException {
         //given
         Meal meal=new Meal(7,"Frise");
-        Order order = new Order();
-        order.addMealOrder(meal);
+        pl.pakinio.testyjednoskowe.order.Order order = new Order();
+        order.addMealToOrder(meal);
 
         //when
         orderBackup.backupOrder(order);

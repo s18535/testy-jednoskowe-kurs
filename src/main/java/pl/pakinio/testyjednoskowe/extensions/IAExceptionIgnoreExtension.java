@@ -1,4 +1,4 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.extensions;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestExecutionExceptionHandler;

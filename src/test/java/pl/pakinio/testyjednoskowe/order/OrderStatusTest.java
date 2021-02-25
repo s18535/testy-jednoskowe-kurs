@@ -1,11 +1,11 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.order;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import pl.pakinio.testyjednoskowe.order.OrderStatus;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderStatusTest {
 

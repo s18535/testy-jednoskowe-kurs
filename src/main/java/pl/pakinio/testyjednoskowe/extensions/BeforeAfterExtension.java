@@ -1,4 +1,4 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.extensions;
 
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;

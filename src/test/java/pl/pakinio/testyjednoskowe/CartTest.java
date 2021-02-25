@@ -1,8 +1,8 @@
 package pl.pakinio.testyjednoskowe;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.pakinio.testyjednoskowe.order.Order;
 
 import java.time.Duration;
 import java.util.List;

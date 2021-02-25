@@ -1,4 +1,4 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.account;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;

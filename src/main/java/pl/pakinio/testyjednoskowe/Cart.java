@@ -1,5 +1,7 @@
 package pl.pakinio.testyjednoskowe;
 
+import pl.pakinio.testyjednoskowe.order.Order;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Cart {
         for (int i = 0; i <1000 ; i++) {
             Meal meal=new Meal(i%10,"Hamburger no "+ i);
             Order order=new Order();
-            order.addMealOrder(meal);
+            order.addMealToOrder(meal);
             addOrderToCart(order);
         }
         System.out.println("Cart size: "+orders.size());
