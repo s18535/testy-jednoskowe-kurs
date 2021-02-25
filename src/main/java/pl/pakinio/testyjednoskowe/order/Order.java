@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
+
+    private OrderStatus orderStatus;
     private List<Meal> meals = new ArrayList<>();
 
     void cancle() {
@@ -18,6 +20,14 @@ public class Order {
 
     public void removeMealFromOder(Meal meal) {
         this.meals.remove(meal);
+    }
+
+    public void changeOrderStatus(OrderStatus orderStatus){
+        this.orderStatus=orderStatus;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
 
     public List<Meal> getMeals() {

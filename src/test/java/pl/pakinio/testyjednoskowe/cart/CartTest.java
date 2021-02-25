@@ -1,7 +1,9 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.cart;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.pakinio.testyjednoskowe.Meal;
+import pl.pakinio.testyjednoskowe.cart.Cart;
 import pl.pakinio.testyjednoskowe.order.Order;
 
 import java.time.Duration;

@@ -1,5 +1,6 @@
-package pl.pakinio.testyjednoskowe;
+package pl.pakinio.testyjednoskowe.cart;
 
+import pl.pakinio.testyjednoskowe.Meal;
 import pl.pakinio.testyjednoskowe.order.Order;
 
 import java.util.ArrayList;
