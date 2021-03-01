@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
@@ -43,6 +44,22 @@ public class AccountServiceTest {
 
         //then
         assertThat(accountList, hasSize(0));
+    }
+
+    @Test
+    void getAccountsByName() {
+        //given
+        List<Account> accounts=prepareAccountDate();
+        AccountRepository accountRepository = mock(AccountRepository.class);
+        AccountService accountService = new AccountService(accountRepository);
+        //when(accountRepository.getAllAccounts()).thenReturn(Collections.emptyList());
+        given(accountRepository.geyByName("dawid")).willReturn(Collections.singletonList("nowak"));   //zamiennik
+
+        //when
+        List<String> accountNames = accountService.findByName("dawid");
+
+        //then
+        assertThat(accountNames, contains("nowak"));
     }
 
     private List<Account> prepareAccountDate(){Address address1=new Address("Kwiatowa", "33/5");

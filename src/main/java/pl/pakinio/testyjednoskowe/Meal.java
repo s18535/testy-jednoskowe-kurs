@@ -11,6 +11,9 @@ public class Meal {
         this.prize = prize;
     }
 
+    public Meal() {
+    }
+
     public Meal(int prize, String name) {
         this.prize = prize;
         this.name = name;
@@ -56,5 +59,9 @@ public class Meal {
                 "prize=" + prize +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    int sumPrice(){
+        return getPrize() *getQuantity();
     }
 }
