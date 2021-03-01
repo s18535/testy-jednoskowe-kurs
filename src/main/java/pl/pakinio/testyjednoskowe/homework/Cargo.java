@@ -25,6 +25,9 @@ public class Cargo {
         return Objects.hash(name, weight);
     }
 
+    String getName() {
+        return this.name;
+    }
 
     int getWeight() {
         return weight;
